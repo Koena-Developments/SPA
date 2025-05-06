@@ -4,23 +4,16 @@
 
     <!-- make a card -->
     <div v-for="product in products" :key="product.id">
-      <p>Here are the products: {{ product.title }} {{ product.id }}  </p>
       <img :src="product.image" alt="">
-    
-    
-    
+      {{ product.title }}
+     R{{ product.price }}
+      {{ product.description }} 
+
     </div>
-
-
-
-
-
-
 </div>
 </template>
 
 <script setup>
-
 
 /*
 UPDATES
@@ -39,11 +32,12 @@ Steps
 1 -> change from fetch(url) to useFetch url for auto handling of json parsing and SSR
 */
 
-// get
+// getAllProducts
 const {data: products} = await useFetch('https://fakestoreapi.com/products')
 
 
 </script>
 <style>
+
 </style>
 
